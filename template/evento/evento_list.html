@@ -1,0 +1,31 @@
+{% extends 'template.html' %}
+{% block body %}
+{% load icons %}
+<div class="container">
+    <table class="table table-striped">
+        <tr>
+            <th>Id</th>
+            <th>Nombre del Evento</th>
+            <td>Nombre del Cliente</td>
+            <td>Tipo</td>
+            <td>Estado</td>
+            <td>Modificar</td>
+            <td>Ir al panel</td>
+        </tr>
+        {% for evento in evento_list %}
+        {% if evento.has_prospeccion %}
+        <tr>
+            <td>{{ evento.id}}</td>
+            <td>{{ evento.name }}</td>
+            <td>{{ evento.client_id.name }}</td>
+            <td>{{ evento.estado }}</td>
+            <td>{{ evento.type }}</td>
+            <td><a href={% url 'evento:evento-update' pk=evento.id %}>{% icon 'edit' %} </a> </td>
+            <td><a href={% url 'evento:evento-detail' pk=evento.id %}>{% icon 'goto' %} </a> </td>
+        </tr>
+        {% endif %}
+</div>
+{% endfor %}
+
+</table>
+{% endblock body %}

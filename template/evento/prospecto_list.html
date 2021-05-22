@@ -1,0 +1,30 @@
+{% extends 'template.html' %}
+{% block body %}
+{% load icons %}
+<div class="container">
+    <a href={% url 'evento:evento-create' %}>{% icon 'create' %} Crear evento... </a>
+    <table class="table table-striped">
+        <tr>
+            <th>Id</th>
+            <th>Nombre del Evento</th>
+            <td>Nombre del Prospecto</td>
+            <td>Tipo</td>
+            <td>Modificar</td>
+            <td>Ir al panel</td>
+        </tr>
+        {% for evento in evento_list %}
+        {% if not evento.has_prospeccion %}
+        <tr>
+            <td>{{ evento.id}}</td>
+            <td>{{ evento.name }}</td>
+            <td>{{ evento.client_id.name }}</td>
+            <td>{{ evento.type }}</td>
+            <td><a href={% url 'evento:evento-update' pk=evento.id %}>{% icon 'edit' %} </a> </td>
+            <td><a href={% url 'evento:evento-detail' pk=evento.id %}>{% icon 'goto' %} </a> </td>
+        </tr>
+        {% endif %}
+</div>
+{% endfor %}
+
+</table>
+{% endblock body %}

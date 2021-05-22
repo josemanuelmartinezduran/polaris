@@ -1,0 +1,45 @@
+.h5 {
+  color: #a07d3c;
+  font-size: 28px !important;
+}
+
+.text-secondary {
+  color: #af8942 !important;
+}
+
+.btn-primary {
+  background-color: #c39746;
+  border-color: #af8942;
+}
+
+.btn-primary:hover {
+  background-color: #a07d3c;
+  border-color: #a07d3c;
+}
+
+p > label {
+  width: 40%;
+  color: #9c9696;
+}
+
+p > input {
+  margin-left: 0%;
+  width: 100%;
+  border: 2px solid #af8942;
+  border-radius: 4px;
+}
+
+p > select {
+  margin-left: 0%;
+  width: 100%;
+  border: 2px solid #af8942;
+  border-radius: 4px;
+}
+
+a {
+  color: #c39746;
+}
+
+a:hover {
+  color: #af8942;
+}

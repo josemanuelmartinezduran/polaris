@@ -1,0 +1,43 @@
+<div id="main_login">
+    <mat-grid-list cols="3" rowHeight="3vh">
+        <mat-grid-tile colspan="3">
+        </mat-grid-tile>
+        <mat-grid-tile>
+        
+        </mat-grid-tile>
+      <mat-grid-tile>
+  
+        <mat-card >
+          <mat-card-header>
+            <mat-card-title align="center">Inicio de Sesión</mat-card-title>
+            <mat-card-subtitle align="center">Polaris</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="../../../assets/logo.png" alt="Logotipo">
+          <mat-card-content>
+            <form class="m-t" role="form" action="index.html">
+              <div class="form-group">
+                <input type="text" class="form-control" name="user" placeholder="Nombre de Usuario" [(ngModel)]="user" />
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" name="passwd" placeholder="Contraseña" [(ngModel)]="passwd" />
+              </div>
+              <p>{{ error }}</p>
+            </form>
+          </mat-card-content>
+          <mat-card-actions align="start">
+            <button type="submit" class="btn btn-primary block full-width m-b" (click)="doLogin()">Iniciar Sesión</button>
+          </mat-card-actions>
+        </mat-card>
+        <div>
+  
+        </div>
+  
+      </mat-grid-tile>
+      <mat-grid-tile>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="3">
+    </mat-grid-tile>
+    </mat-grid-list>
+  
+  </div>
+  

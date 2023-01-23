@@ -1,0 +1,11 @@
+#main_login{
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .link{
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+  }
+  

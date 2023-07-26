@@ -10,13 +10,15 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { MaterialModule } from 'material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PolarisComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

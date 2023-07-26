@@ -21,6 +21,12 @@ export class LoginComponent implements OnInit {
       this.error = "No puede iniciar sesión sin usuario"
     }
     this._sessionService.auth(this.user, this.passwd);
+    setTimeout(() => {
+      if(this._sessionService.sesion_valid){
+        this.router.navigate(['dashboard'])
+      }
+    }, 300);
+    
   }
 
   ngOnInit(): void {

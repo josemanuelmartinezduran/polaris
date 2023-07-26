@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SessionService } from 'src/app/services/session.service';
 
 @Component({
   selector: 'app-polaris',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./polaris.component.css']
 })
 export class PolarisComponent {
-
+  nombre:string|null = "";
+  constructor(private sessionService:SessionService) {
+    this.sessionService.getSession();
+    this.nombre = this.sessionService.nombre;
+  }
 }

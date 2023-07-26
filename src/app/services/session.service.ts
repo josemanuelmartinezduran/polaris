@@ -7,8 +7,6 @@ import { AntaresService } from './antares.service';
 export class SessionService {
   id:string|null = "";
   nombre:string|null = "";
-  id_empleado:string|null = "";
-  nombre_empleado:string|null = ""
   sesion_valid:boolean = false;
 
   constructor(private antaresService:AntaresService) { }
@@ -18,9 +16,12 @@ export class SessionService {
   }
 
   auth(username:string, password:string){
-    this.antaresService.getData("res.users", [["name", "=", username], ["solar_passwd", "=", password]]).subscribe(
+    this.antaresService.getData("res.users", [["login", "=", username], ["solar_passwd", "=", password]]).subscribe(
       (data:any) => {
-        console.log(data);
+        this.id = data[0].id;
+        this.nombre = data[0].name;
+        this.sesion_valid = true;
+        this.setSession()
       });
   }
 
